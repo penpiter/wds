@@ -1,1 +1,1 @@
-tretre
+shutdown /s
