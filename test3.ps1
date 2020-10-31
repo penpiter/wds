@@ -1,1 +1,1 @@
-shutdown /s
+shutdown /i
