@@ -11,6 +11,6 @@ echo $GITPath
 	#.\Set-Screen.ps1 -LockScreenSource "$lsimg"
         .\LockScreenImage.ps1 -LockScreenImageSource "$lsimg"
         rundll32.exe user32.dll, UpdatePerUserSystemParameters
-	Remove-Item -Path .\lockscreen.jpg -Force
+	#Remove-Item -Path .\lockscreen.jpg -Force
  }
  rundll32.exe user32.dll, UpdatePerUserSystemParameters
