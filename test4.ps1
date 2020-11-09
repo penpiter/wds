@@ -1,0 +1,15 @@
+$ID=get-content c:\Windows\id
+$GITPath="https://raw.githubusercontent.com/penpiter/wds/main/lockscreen_"+$ID+".jpg"
+$statusCodePS = Invoke-WebRequest -Uri $GITPath | % {$_.StatusCode}
+
+ if($statusCodePS -eq 200) {
+    wget $GITPath -OutFile .\lockscreen.jpg
+	 
+	$lsimg =  (ls lockscreen.jpg).DirectoryName+"\lockscreen.jpg"
+	.\Set-Screen.ps1 -LockScreenSource "$lsimg"
+    .\LockScreenImage.ps1 -LockScreenImageSource "$lsimg"
+ }
+
+
+ rundll32.exe user32.dll, UpdatePerUserSystemParameters
+ 
