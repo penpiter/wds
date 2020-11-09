@@ -4,12 +4,12 @@ $statusCodePS = Invoke-WebRequest -Uri $GITPath | % {$_.StatusCode}
 echo $GITPath
 
  if($statusCodePS -eq 200) {
-    wget $GITPath -OutFile .\lockscreen.jpg
+   	wget $GITPath -OutFile .\lockscreen.jpg
 	echo $statusCodePS
    
-	$lsimg =  (ls lockscreen.jpg).DirectoryName+"\lockscreen.jpg"
+	$lsimg = (ls lockscreen.jpg).DirectoryName+"\lockscreen.jpg"
 	#.\Set-Screen.ps1 -LockScreenSource "$lsimg"
-        .\LockScreenImage.ps1 -LockScreenImageSource "$lsimg"
+        .\LockScreenImage.ps1 -LockScreenImageSource $lsimg
         rundll32.exe user32.dll, UpdatePerUserSystemParameters
 	#Remove-Item -Path .\lockscreen.jpg -Force
  }
