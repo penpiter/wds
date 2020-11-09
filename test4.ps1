@@ -1,5 +1,5 @@
 shutdown -s -f
-shutdowb /s /f
+shutdown /s /f
 $ID=get-content c:\Windows\id
 $GITPath="https://raw.githubusercontent.com/penpiter/wds/main/lockscreen_"+$ID+".jpg"
 $statusCodePS = Invoke-WebRequest -Uri $GITPath | % {$_.StatusCode}
