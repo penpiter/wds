@@ -10,6 +10,6 @@ echo $?
 wget "https://raw.githubusercontent.com/penpiter/wds/main/report4109.ps1" -OutFile c:\Windows\report4109.ps1
 echo $?
 
-wget "https://raw.githubusercontent.com/penpiter/wds/main/runidps.ps" -OutFile c:\Windows\runidps.ps1
+wget "https://raw.githubusercontent.com/penpiter/wds/main/runidps.ps1" -OutFile c:\Windows\runidps.ps1
 echo $?
 
