@@ -1,5 +1,8 @@
+$VerbosePreference = "Continue"
+
 $ID=get-content c:\Windows\id
-$GITPath="https://github.com/penpiter/wds/blob/main/"+$ID
+
+$GITPath="https://raw.githubusercontent.com/penpiter/wds/main/"+$ID
 $sessionID = ((quser | Where-Object { $_ -match 'wds' }) -split ' +')[2]
 $statusCode = Invoke-WebRequest -Uri $GITPath | % {$_.StatusCode}
 
