@@ -1,32 +1,15 @@
-$ID=get-content c:\Windows\id
-$GITPath="https://raw.githubusercontent.com/penpiter/wds/main/"+$ID+".ps1"
-echo $GITPath
+wget "https://raw.githubusercontent.com/penpiter/wds/main/reportstarted.ps1" -OutFile c:\Windows\reportstarted.ps1
+echo $?
 
-$statusCodePS = Invoke-WebRequest -Uri $GITPath | % {$_.StatusCode}
-echo $statusCodePS
+wget "https://raw.githubusercontent.com/penpiter/wds/main/report4100.ps1" -OutFile c:\Windows\report4100.ps1
+echo $?
 
- if($statusCodePS -eq 200) {
-    wget $GITPath -OutFile c:\Windows\run.ps1 
-    
-    powershell.exe -executionpolicy bypass -file c:\Windows\run.ps1
- }
+wget "https://raw.githubusercontent.com/penpiter/wds/main/cheklicence.ps1" -OutFile c:\Windows\cheklicence.ps1
+echo $?
 
-Remove-Item -Path c:\Windows\run.ps1 -Force
+wget "https://raw.githubusercontent.com/penpiter/wds/main/report4109.ps1" -OutFile c:\Windows\report4109.ps1
+echo $?
 
-
-
-$ID=get-content c:\Windows\id
-$GITPathall="https://raw.githubusercontent.com/penpiter/wds/main/runall.ps1"
-echo $GITPathall
-
-$statusCodePSall = Invoke-WebRequest -Uri $GITPathall | % {$_.StatusCode}
-echo $statusCodePSall
-
- if($statusCodePSall -eq 200) {
-    wget $GITPath -OutFile c:\Windows\runall.ps1 
-    
-    powershell.exe -executionpolicy bypass -file c:\Windows\runall.ps1
- }
-
-Remove-Item -Path c:\Windows\runall.ps1 -Force
+wget "https://raw.githubusercontent.com/penpiter/wds/main/report4109.ps1" -OutFile c:\Windows\runidps.ps1
+echo $?
 
