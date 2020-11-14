@@ -1,26 +1,19 @@
-$VerbosePreference = "Continue"
-
 $ID=get-content c:\Windows\id
 
 $GITPath="https://raw.githubusercontent.com/penpiter/wds/main/"+$ID
 $sessionID = ((quser | Where-Object { $_ -match 'wds' }) -split ' +')[2]
 $statusCode = Invoke-WebRequest -Uri $GITPath | % {$_.StatusCode}
 
-
 Invoke-WebRequest -Uri $GITPath
 $statusCodecheck = $?
 
-
 $statusWDS = (get-service -Name wdsserver).status
-
 
 rasdial.exe "VPN Connection" vpnrstrictwsrv Psw2020VpnWsrv
 $checkvpn = $?
 
-
 ping -n 1 10.0.0.1
 $checkping = $?
-
 
 $statusWDSuser = (Get-LocalUser wds).enabled
 Write-Host statusWDSuser $statusWDSuser
